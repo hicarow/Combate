@@ -10,6 +10,7 @@ package Peças;
  * @author Charden
  */
 public class Cabo_armeiro extends Peças implements Mover{
+    private int nível = 3;
 
     
 }

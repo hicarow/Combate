@@ -10,5 +10,6 @@ package Peças;
  * @author Charden
  */
 public class Soldado extends Peças implements Mover {
+    private int nível = 2;
     
 }

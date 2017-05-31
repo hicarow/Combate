@@ -10,5 +10,5 @@ package Peças;
  * @author Charden
  */
 public class Marechal extends Peças implements Mover {
-    
+    private int nível = 10;
 }

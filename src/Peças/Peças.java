@@ -16,11 +16,19 @@ abstract public class Peças{
     private boolean visível;
     private boolean móvel;
     
-    private boolean getVisível(){
+    public String getNome(){
+        return this.nome;       
+    }
+            
+    public void setNome(String novonome){
+        this.nome = novonome;
+    }
+    
+    public boolean getVisível(){
         return visível;
     }
-    private void setVisível(boolean valor){
-        visível = valor;
+    public void setVisível(boolean novovalor){
+        visível = novovalor;
     }
         
 

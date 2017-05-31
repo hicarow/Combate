@@ -10,5 +10,5 @@ package Peças;
  * @author Charden
  */
 public class Espião extends Peças implements Mover {
-    
+    private int nível = 1;
 }

@@ -34,7 +34,7 @@ abstract public class Peças{
 
     private batalha(){
         
-        if(this.nível)
+        if(this.)
             
          this.setVisível(true);
     }

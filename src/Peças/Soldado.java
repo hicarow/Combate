@@ -12,4 +12,7 @@ package Peças;
 public class Soldado extends Peças implements Mover {
     private int nível = 2;
     
+    void mover(int x, int y){
+        
+    };
 }

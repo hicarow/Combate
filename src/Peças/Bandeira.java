@@ -11,4 +11,5 @@ package Peças;
  */
 public class Bandeira extends Peças{
     
+    
 }

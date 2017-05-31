@@ -11,4 +11,10 @@ package Peças;
  */
 public class Marechal extends Peças implements Mover {
     private int nível = 10;
+    void setNome(String Marechal);
+    
+    
+    void mover(int x, int y){
+        
+    };
 }

@@ -10,7 +10,14 @@ package Peças;
  * @author Charden
  */
 public class Cabo_armeiro extends Peças implements Mover{
-    private int nível = 3;
-
     
+    private int nível = 3;
+    Cabo_armeiro(){
+        
+        this.setNome(Cabo_armeiro);
+            
+    }
+    void mover(int x, int y){
+        
+    };
 }

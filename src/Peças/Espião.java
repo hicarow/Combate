@@ -11,4 +11,10 @@ package Peças;
  */
 public class Espião extends Peças implements Mover {
     private int nível = 1;
+    void setNome(Espião);
+    
+    
+    void mover(int x, int y){
+        
+    };
 }

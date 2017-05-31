@@ -10,13 +10,11 @@ package Peças;
  * @author Charden
  */
       
-abstract public class peças{
+abstract public class Peças{
     
     private String nome;
     private boolean visível;
     private boolean móvel;
-    
-    
     
     private boolean getVisível(){
         return visível;
@@ -24,12 +22,11 @@ abstract public class peças{
     private void setVisível(boolean valor){
         visível = valor;
     }
-    
-    private void mover(int x, int y){
         
-    }
+
     private batalha(){
-        if(this.nivel)
+        
+        if(this.nível)
             
          this.setVisível(true);
     }

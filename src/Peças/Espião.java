@@ -11,9 +11,9 @@ package Peças;
  */
 public class Espião extends Peças implements Mover {
     
-    private int nível;
+    protected int nível;
     
-    Espião(){
+    public Espião(){
         
         this.nome="Espião";
         this.nível = 1;

@@ -42,9 +42,9 @@ abstract public class Peças{
     }
         
 
-    public batalha(Peças 1, Peças 2){
+    public void batalha(Peças 1, Peças 2){
         
-        if(this.nome == "Bomba"){
+        if(this.nome=="Bomba"){
             
         }
         if(this.nome == "Bandeira"){

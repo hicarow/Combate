@@ -9,18 +9,13 @@ package Peças;
  *
  * @author Charden
  */
-public class Soldado extends Peças implements Mover {
-    private int nível;
-   
-    public Soldado(){
-        
-        this.nome="Soldado";
-        this.móvel=true;
-        this.nível=2;
-        
+public class Lago extends Peças{
+    public Lago(){
+        this.visível = true;
+        this.nome = "Lago";
+        this.móvel = false;
+        this.CPU = false;
     }
     
-    void mover(int x, int y){
-        
-    };
+    
 }

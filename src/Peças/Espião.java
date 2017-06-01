@@ -22,6 +22,13 @@ public class Espião extends Peças implements Mover {
     
     
     void mover(int x, int y){
-        
-    };
+        if(this.móvel==true){
+            
+            
+        }
+        else{
+            return;
+            
+        }
+    }
 }

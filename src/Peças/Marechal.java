@@ -13,7 +13,7 @@ public class Marechal extends Peças implements Mover {
     
     private int nível;
     
-    Marechal(){
+    public Marechal(){
         
         this.nome="Marechal";
         this.móvel=true;

@@ -5,25 +5,32 @@
  */
 package combate;
 
+import Peças.Lago;
+import Peças.Marechal;
+import java.util.Random;
 import Peças.Peças;
+
 
 /**
  *
  * @author Charden
  */
 public class Tabuleiro {
-    private int i,j;
-    private String nome;
+    
+    static int i,j;
+    Peças Tabuleiro[][] = new Peças[5][5];
     
     
-    static void posicionaLago(){
+    public void posicionaLago(){
         
-        
+        Random aleatorio = new Random();
+        i = aleatorio.nextInt(6);
+                
+        Tabuleiro[i][3] = new Lago();
         
     }
     
     Tabuleiro(){
-        Peças Tabuleiro[][] = new Peças[5][5];
         
             for(i=0;i<5;i++){           
                 for(j=0;j<5;j++){
@@ -35,13 +42,11 @@ public class Tabuleiro {
         
     }
     Tabuleiro(int i, int j, Peças Peça){
-        Peças Tabuleiro[][] = new Peças[5][5];
         
             for(i=0;i<5;i++){           
                 for(j=0;j<5;j++){
                 
 
-                Tabuleiro[i][j] = new;
                 
                 }
             }

@@ -11,10 +11,12 @@ package Peças;
  */
 public class Cabo_armeiro extends Peças implements Mover{
     
-    private int nível = 3;
+    private int nível;
     Cabo_armeiro(){
         
-        this.setNome(Cabo_armeiro);
+        this.nome="Cabo armeiro";
+        this.móvel=true;
+        this.nível=3;
             
     }
     void mover(int x, int y){

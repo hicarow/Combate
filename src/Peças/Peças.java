@@ -8,13 +8,16 @@ package Peças;
 /**
  *
  * @author Charden
+ * 
+ * 
+ * 
  */
-      
+  
 abstract public class Peças{
     
-    private String nome;
-    private boolean visível;
-    private boolean móvel;
+    protected String nome;
+    protected boolean visível;
+    protected boolean móvel;
     
     public String getNome(){
         return this.nome;       

@@ -10,8 +10,19 @@ package Peças;
  * @author Charden
  */
 public class Marechal extends Peças implements Mover {
-    private int nível = 10;
-    void setNome(String Marechal);
+    
+    private int nível;
+    
+    Marechal(){
+        
+        this.nome="Marechal";
+        this.móvel=true;
+        this.nível=10;
+        
+    }
+    
+    
+    
     
     
     void mover(int x, int y){

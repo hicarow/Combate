@@ -1,19 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Peças;
 
-/**
- *
- * @author Charden
- * 
- * 
- * 
- */
-  
-abstract public class Peças{
+public class Peças{
     
     protected boolean CPU;
     protected String nome;
@@ -42,7 +30,7 @@ abstract public class Peças{
     }
         
 
-    public void batalha(Peças 1, Peças 2){
+    /*public void batalha(Peças 1, Peças 2){
         
         if(this.nome=="Bomba"){
             
@@ -52,6 +40,6 @@ abstract public class Peças{
         }   
          
         this.setVisível(true);
-    }
+    }*/
     
 }

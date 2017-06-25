@@ -30,7 +30,7 @@ public class Tabuleiro {
     Bomba bomba2 = new Bomba();
     Bandeira bandeira = new Bandeira();
     
-    public void posicionamento(){
+    /*public void posicionamento(){
         
         System.out.println("Escolha o modo de jogo:\n1- Definido \n2- Aleatorio\n Tecle qualquer outra coisa para sair\\n\\n");
         Scanner entrada = new Scanner(System.in);
@@ -49,8 +49,8 @@ public class Tabuleiro {
             default: System.out.println("Até a próxima!");
         }
     }
-    
-    private void definido(){
+    */
+    private void posicionamentoDefinido(){
         
         Random radom = new Random();
         int n = 0, i = 0, j = 0;
@@ -72,7 +72,7 @@ public class Tabuleiro {
         }
     }
     
-    private void aleatorio(){
+    private void posicionamentoAleatorio(){
         
         Random radom = new Random();
         int n, i, j;
@@ -105,27 +105,5 @@ public class Tabuleiro {
                 
         Tabuleiro[i][3] = new Lago();
         
-    }
-    
-    Tabuleiro(){
-        
-            for(i=0;i<5;i++){           
-                for(j=0;j<5;j++){
-                
-                Tabuleiro[i][j] = new Marechal();
-                
-            }
-        }
-        
-    }
-    Tabuleiro(int i, int j, Peças Peça){
-        
-            for(i=0;i<5;i++){           
-                for(j=0;j<5;j++){
-                
-
-                
-                }
-            }
     }
 }

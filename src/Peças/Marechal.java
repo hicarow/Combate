@@ -1,6 +1,6 @@
 package Peças;
 
-public class Marechal extends Peças implements Mover {
+public class Marechal extends Peças{
     
     private int nível;
     
@@ -10,8 +10,6 @@ public class Marechal extends Peças implements Mover {
         this.móvel=true;
         this.nível=10;
         
-    }
-    public void mover(){
-        
+    
     }
 }

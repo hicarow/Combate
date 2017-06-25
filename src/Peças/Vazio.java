@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package combate;
+package Peças;
 
 /**
  *
  * @author Charden
  */
-public class InterfaceGráfica {
+public class Vazio extends Peças {
     
+    public Vazio(){
+        
+        this.nome="Vazio";
+        this.móvel=true;
+        
+    }
 }

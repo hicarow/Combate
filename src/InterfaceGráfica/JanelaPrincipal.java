@@ -16,6 +16,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
      */
     public JanelaPrincipal() {
         initComponents();
+        
     }
 
     /**
@@ -27,17 +28,99 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TelaBoasVindas = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        Sair = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        Regras = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        Sobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("COMBATE");
 
+        jButton1.setText("Jogar!");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Bem vindo ao Jogo Combate! clique no botão abaixo para iniciar:");
+
+        javax.swing.GroupLayout TelaBoasVindasLayout = new javax.swing.GroupLayout(TelaBoasVindas);
+        TelaBoasVindas.setLayout(TelaBoasVindasLayout);
+        TelaBoasVindasLayout.setHorizontalGroup(
+            TelaBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TelaBoasVindasLayout.createSequentialGroup()
+                .addGroup(TelaBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TelaBoasVindasLayout.createSequentialGroup()
+                        .addGap(306, 306, 306)
+                        .addComponent(jButton1))
+                    .addGroup(TelaBoasVindasLayout.createSequentialGroup()
+                        .addGap(177, 177, 177)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
+        TelaBoasVindasLayout.setVerticalGroup(
+            TelaBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TelaBoasVindasLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jLabel1)
+                .addGap(127, 127, 127)
+                .addComponent(jButton1)
+                .addContainerGap(258, Short.MAX_VALUE))
+        );
+
         jMenu1.setText("File");
+
+        jMenuItem1.setText("Novo Jogo");
+        jMenu1.add(jMenuItem1);
+
+        Sair.setText("Sair");
+        jMenu1.add(Sair);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Ajuda");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
+
+        Regras.setText("Regras do jogo");
+        Regras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegrasMouseClicked(evt);
+            }
+        });
+        Regras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegrasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Regras);
+        jMenu2.add(jSeparator1);
+
+        Sobre.setText("Sobre o programa...");
+        Sobre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SobreMouseClicked(evt);
+            }
+        });
+        Sobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SobreActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Sobre);
+        Sobre.getAccessibleContext().setAccessibleDescription("");
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -46,15 +129,44 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(TelaBoasVindas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TelaBoasVindas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RegrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegrasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegrasMouseClicked
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void SobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SobreMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_SobreMouseClicked
+
+    private void RegrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegrasActionPerformed
+
+    private void SobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SobreActionPerformed
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SobreActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        TelaBoasVindas.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -82,18 +194,32 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(JanelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+  
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JanelaPrincipal().setVisible(true);
+               
+               
+                
             }
+            
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Regras;
+    private javax.swing.JMenuItem Sair;
+    private javax.swing.JMenuItem Sobre;
+    private javax.swing.JPanel TelaBoasVindas;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

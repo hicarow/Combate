@@ -1,6 +1,6 @@
 package Peças;
 
-public class Soldado extends Peças implements Mover {
+public class Soldado extends Peças{
     
     private int nível;
     public Soldado(){
@@ -10,7 +10,5 @@ public class Soldado extends Peças implements Mover {
         this.nível=2;
         
     }
-    public void mover(){
-        
-    }
+  
 }

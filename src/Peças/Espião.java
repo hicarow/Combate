@@ -1,6 +1,6 @@
 package Peças;
 
-public class Espião extends Peças implements Mover {
+public class Espião extends Peças {
     
     protected int nível;
     
@@ -11,15 +11,6 @@ public class Espião extends Peças implements Mover {
         this.móvel = true;
     }
     
-    
-    public void mover(){
-        if(this.móvel==true){
-            
-            
-        }
-        /*else{
-            return;
-            
-        }*/
-    }
 }
+    
+

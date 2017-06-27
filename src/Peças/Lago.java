@@ -11,6 +11,5 @@ public class Lago extends Peças{
         this.movel = false;
         this.time = 2;
         this.imagem = new ImageIcon("Lago.png");
-        this.imagem2 = new ImageIcon("Lago.png");
     } 
 }

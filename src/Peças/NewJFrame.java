@@ -58,10 +58,13 @@ public class NewJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel1.setVisible(false);
-        jButtonJogar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        jPanel5.setVisible(false);
+        jButtonJogar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -70,9 +73,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
@@ -87,13 +90,20 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel4.setVisible(false);
-        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1024, 768));
         setMinimumSize(new java.awt.Dimension(600, 400));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 67, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
 
         jButtonJogar.setIcon(jButton1.getIcon());
         jButtonJogar.setText("jogar");
@@ -103,21 +113,36 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Bem vindo ao jogo Combate! clique abaixo para jogar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addComponent(jButtonJogar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(565, 565, 565)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(282, 282, 282)
+                        .addComponent(jButtonJogar)))
+                .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(121, 121, 121)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(90, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(97, 97, 97)
+                .addComponent(jLabel1)
+                .addGap(29, 29, 29)
                 .addComponent(jButtonJogar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(307, 307, 307))
         );
 
         jPanel2.setVisible(false);
@@ -127,15 +152,27 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 677, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel5.setPreferredSize(jPanel1.getMinimumSize());
-        jPanel5.setLayout(new java.awt.GridLayout(5, 5, 1, 1));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 677, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jPanel4.setPreferredSize(jPanel1.getMinimumSize());
+        jPanel4.setVisible(false);
+        jPanel4.setLayout(new java.awt.GridLayout(5, 5, 1, 1));
 
         jButton1.setIcon(Tabuleiro.matriz[0][0].getImagem());
         jButton1.setText("jButton1");
@@ -146,113 +183,119 @@ public class NewJFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton1);
+        jPanel4.add(jButton1);
 
         jButton2.setIcon(Tabuleiro.matriz[0][1].getImagem());
         jButton2.setText("jButton2");
-        jPanel5.add(jButton2);
+        jPanel4.add(jButton2);
 
         jButton3.setIcon(Tabuleiro.matriz[0][2].getImagem());
         jButton3.setText("jButton3");
-        jPanel5.add(jButton3);
+        jPanel4.add(jButton3);
 
         jButton4.setIcon(Tabuleiro.matriz[0][3].getImagem());
         jButton4.setText("jButton4");
-        jPanel5.add(jButton4);
+        jPanel4.add(jButton4);
 
         jButton5.setIcon(Tabuleiro.matriz[0][4].getImagem());
         jButton5.setText("jButton5");
-        jPanel5.add(jButton5);
+        jPanel4.add(jButton5);
 
         jButton6.setIcon(Tabuleiro.matriz[1][0].getImagem());
         jButton6.setText("jButton6");
-        jPanel5.add(jButton6);
+        jPanel4.add(jButton6);
 
+        jButton7.setIcon(Tabuleiro.matriz[1][1].getImagem());
+        jButton7.setMnemonic('T');
         jButton7.setText("jButton7");
-        jPanel5.add(jButton7);
+        jPanel4.add(jButton7);
 
+        jButton8.setIcon(Tabuleiro.matriz[1][2].getImagem());
         jButton8.setText("jButton8");
-        jPanel5.add(jButton8);
+        jPanel4.add(jButton8);
 
-        jButton11.setText("jButton11");
-        jPanel5.add(jButton11);
-
+        jButton9.setIcon(Tabuleiro.matriz[1][4].getImagem());
         jButton9.setText("jButton9");
-        jPanel5.add(jButton9);
+        jPanel4.add(jButton9);
 
         jButton10.setIcon(Tabuleiro.matriz[2][0].getImagem());
         jButton10.setText("jButton10");
-        jPanel5.add(jButton10);
+        jPanel4.add(jButton10);
+
+        jButton11.setIcon(Tabuleiro.matriz[2][0].getImagem());
+        jButton11.setText("jButton11");
+        jPanel4.add(jButton11);
 
         jButton12.setIcon(Tabuleiro.matriz[2][1].getImagem());
         jButton12.setText("jButton12");
-        jPanel5.add(jButton12);
+        jPanel4.add(jButton12);
 
         jButton13.setIcon(Tabuleiro.matriz[2][2].getImagem());
         jButton13.setText("jButton13");
-        jPanel5.add(jButton13);
+        jPanel4.add(jButton13);
 
         jButton14.setIcon(Tabuleiro.matriz[2][3].getImagem());
         jButton14.setText("jButton14");
-        jPanel5.add(jButton14);
+        jPanel4.add(jButton14);
 
         jButton15.setIcon(Tabuleiro.matriz[2][4].getImagem());
         jButton15.setText("jButton15");
-        jPanel5.add(jButton15);
+        jPanel4.add(jButton15);
 
         jButton16.setIcon(Tabuleiro.matriz[3][0].getImagem());
         jButton16.setText("jButton16");
-        jPanel5.add(jButton16);
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton16);
 
+        jButton17.setIcon(Tabuleiro.matriz[3][1].getImagem());
         jButton17.setText("jButton17");
-        jPanel5.add(jButton17);
+        jPanel4.add(jButton17);
 
+        jButton18.setIcon(Tabuleiro.matriz[3][2].getImagem());
         jButton18.setText("jButton18");
-        jPanel5.add(jButton18);
+        jPanel4.add(jButton18);
 
+        jButton19.setIcon(Tabuleiro.matriz[3][3].getImagem());
         jButton19.setText("jButton19");
-        jPanel5.add(jButton19);
+        jPanel4.add(jButton19);
 
+        jButton20.setIcon(Tabuleiro.matriz[3][4].getImagem());
         jButton20.setText("jButton20");
-        jPanel5.add(jButton20);
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton20);
 
         jButton21.setIcon(Tabuleiro.matriz[4][0].getImagem());
         jButton21.setText("jButton21");
-        jPanel5.add(jButton21);
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton21);
 
+        jButton22.setIcon(Tabuleiro.matriz[4][1].getImagem());
         jButton22.setText("jButton22");
-        jPanel5.add(jButton22);
+        jPanel4.add(jButton22);
 
+        jButton23.setIcon(Tabuleiro.matriz[4][2].getImagem());
         jButton23.setText("jButton23");
-        jPanel5.add(jButton23);
+        jPanel4.add(jButton23);
 
+        jButton24.setIcon(Tabuleiro.matriz[4][3].getImagem());
         jButton24.setText("jButton24");
-        jPanel5.add(jButton24);
+        jPanel4.add(jButton24);
 
+        jButton25.setIcon(Tabuleiro.matriz[4][4].getImagem());
         jButton25.setText("jButton25");
-        jPanel5.add(jButton25);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
+        jPanel4.add(jButton25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -261,8 +304,6 @@ public class NewJFrame extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,8 +314,6 @@ public class NewJFrame extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,8 +328,27 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJogarActionPerformed
+        jPanel1.setVisible(false);
+        
+        jPanel4.setVisible(true);
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonJogarActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton20ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,7 +384,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 Tabuleiro.esvaziaTabuleiro();
                 Tabuleiro.instanciaPeçasCPU();
                 Tabuleiro.instanciaPeçasJogador();
-                //Tabuleiro.posicionamentoAleatorio();
+                Tabuleiro.posicionamentoAleatorio();
                 Tabuleiro.posicionamentoCPU();
                 
                 new NewJFrame().setVisible(true);
@@ -362,6 +420,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonJogar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -89,7 +89,7 @@ public class InterfaceGrafica extends JFrame implements ActionListener{
                 for(j = 0; j < 5; j++){
                     if(evento.getSource() == matrizbotao[i][j]){
                         if(Tabuleiro.matriz[i][j].time == 1){
-                            if(ValidaOrigem(i, j, 1)){
+                            if(Tabuleiro.ValidaOrigem(i, j, 1)){
                                 x = i;
                                 y = j;
                                 turnp = false;
@@ -121,14 +121,14 @@ public class InterfaceGrafica extends JFrame implements ActionListener{
                 vencedor = 1;
                 turnai = false;
             }
-            else if(VerificarFim(2) == 1){
+            else if(Tabuleiro.FimdeJogo(2) == 1){
                 fim =  true;
                 vencedor = 1;
                 turnai = false;
             }
             else{
                 if(turnai){
-                    fim = MovimentoAI();
+                    fim = Tabuleiro.MovimentoAI();
                     turnai = false;
                 }
 
@@ -137,7 +137,7 @@ public class InterfaceGrafica extends JFrame implements ActionListener{
                 }
             }
 
-            if(VerificarFim(1) == 1){
+            if(Tabuleiro.FimdeJogo(1) == 1){
                 fim = true;
                 vencedor = 2;
             }
@@ -193,129 +193,7 @@ public class InterfaceGrafica extends JFrame implements ActionListener{
             AtualizaIcone();
             }}
     
-    public boolean ValidaOrigem(int x, int y, int k){
-        
-        
-        if(Tabuleiro.matriz[x][y].nivel > 10)
-            return false;
-        else{
-            if(x+1 < 5){
-                if((Tabuleiro.matriz[x+1][y].time != k) && (Tabuleiro.matriz[x+1][y].time != 3))
-                return true;
-            }
-            if(x-1 > -1){
-                if((Tabuleiro.matriz[x-1][y].time != k) && (Tabuleiro.matriz[x-1][y].time != 3))
-                return true;
-            }
-            if(y+1 < 5){
-                if((Tabuleiro.matriz[x][y+1].time != k) && (Tabuleiro.matriz[x][y+1].time != 3))
-                return true;
-            }
-            if(y-1 > -1){
-                if((Tabuleiro.matriz[x][y-1].time != k) && (Tabuleiro.matriz[x][y-1].time != 3))
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean MovimentoAI(){
-        Random Random = new Random();
-        boolean validate;
-        int destino;
-        
-        do{
-            validate = false;
-            
-            x = Random.nextInt(5);
-            y = Random.nextInt(5);
-            
-            if(ValidaOrigem(x, y, 2))
-                validate = true;
-            
-            if(Tabuleiro.matriz[x][y].time != 2)
-                validate = false;
-                               
-        }while(!validate);
-                        
-        do{
-            validate = false;
-            
-            destino = Random.nextInt(4);
-            
-            System.out.println(destino);
-            
-            if(destino == 0) //cima
-            {
-                if(x - 1 > -1){
-                    if(Tabuleiro.matriz[x-1][y].time != 2){
-                        x2 = x-1;
-                        y2 = y;
-                        validate = true;                        
-                    }
-                }
-            }
-            else if(destino == 1) //direita
-            {
-                if(y + 1 < 5){
-                    if(Tabuleiro.matriz[x][y+1].time != 2){
-                        x2 = x;
-                        y2 = y+1;
-                        validate = true;
-                    }
-                }
-            }
-            else if(destino == 2) //baixo
-            {
-                if(x + 1 < 5){
-                    if(Tabuleiro.matriz[x+1][y].time != 2){
-                        x2 = x+1;
-                        y2 = y;
-                        validate = true;
-                    }
-                }
-            }
-            else if(destino == 3) //esquerda
-            {
-                if(y-1 > -1){
-                    if(Tabuleiro.matriz[x][y-1].time != 2){
-                        x2 = x;
-                        y2 = y - 1;
-                        validate = true;
-                    }
-                }
-            }
-            if(Tabuleiro.matriz[x2][y2].time == 3)
-                validate = false;
-        }while(!validate);
-        
-        System.out.println(x + " : " + y);
-        System.out.println(x2 + " : " + y2);
-        System.out.println(Tabuleiro.matriz[x][y].nome);
-        
-        return(Tabuleiro.matriz[x][y].Batalha(x, x2, y, y2));
-    }
     
-    public int VerificarFim(int n){
-        int i, j, cont;
-        
-        cont = 0;
-        
-        for(i = 0; i < 5; i++){
-            for(j = 0; j < 5; j++){
-                if(Tabuleiro.matriz[i][j].time == n){
-                    if(Tabuleiro.matriz[i][j].nivel <= 10){
-                        if(ValidaOrigem(i, j, n))
-                            cont++;
-                    }
-                }
-            }
-        }
-        
-        if(cont == 0){
-            return 1;
-        }
-        else
-            return 0;
-    }
+
+    
 }

@@ -4,11 +4,9 @@ import javax.swing.ImageIcon;
 
 public class Cabo extends Peças {
 
-    private int nivel;
-
     public Cabo() {
 
-        this.nome = "Cabo armeiro";
+        this.nome = "Cabo";
         this.movel = true;
         this.nivel = 3;
 

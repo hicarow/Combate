@@ -5,16 +5,20 @@
  */
 package Peças;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Charden
  */
 public class Vazio extends Peças {
-    
-    public Vazio(){
-        
-        this.nome="Vazio";
-        this.móvel=true;
-        
+
+    Vazio() {
+
+        this.visivel = true;
+        this.nome = "Vazio";
+        this.movel = true;
+        this.nivel = 0;
+        this.imagem = new ImageIcon("Vazio.png");
     }
 }

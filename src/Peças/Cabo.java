@@ -2,24 +2,28 @@ package Peças;
 
 import javax.swing.ImageIcon;
 
-public class Bandeira extends Peças {
+public class Cabo extends Peças {
 
-    public Bandeira() {
-        this.visivel = false;
-        this.nome = "Bandeira";
-        this.movel = false;
-        this.nivel = 100;
+    private int nivel;
+
+    public Cabo() {
+
+        this.nome = "Cabo armeiro";
+        this.movel = true;
+        this.nivel = 3;
+
     }
 
     public void setImagem(boolean visivel, boolean CPU) {
 
         if (visivel == true && CPU == false) {
-            this.imagem = new ImageIcon("BandeiraJogador.png");
+            this.imagem = new ImageIcon("CaboJogador.png");
         } else if (visivel == true && CPU == true) {
-            this.imagem = new ImageIcon("BandeiraCPU.png");
+            this.imagem = new ImageIcon("CaboCPU.png");
         } else {
             this.imagem = new ImageIcon("Desconhecido.png");
         }
+
     }
 
 }

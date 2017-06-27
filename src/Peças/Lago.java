@@ -1,12 +1,16 @@
 package Peças;
 
+import javax.swing.ImageIcon;
+
 public class Lago extends Peças{
     public Lago(){
-        this.visível = true;
+        
+        this.nivel = 11;
+        this.visivel = true;
         this.nome = "Lago";
-        this.móvel = false;
-        this.CPU = false;
-    }
-    
-    
+        this.movel = false;
+        this.time = 2;
+        this.imagem = new ImageIcon("Lago.png");
+        this.imagem2 = new ImageIcon("Lago.png");
+    } 
 }

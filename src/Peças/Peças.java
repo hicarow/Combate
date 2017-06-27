@@ -14,7 +14,6 @@ public abstract class Peças {
     protected ImageIcon imagem;   //alterar depois
     protected ImageIcon imagem1;
     protected ImageIcon imagem2;
-    protected ImageIcon imagem3;
 
     public boolean getCPU(){
         return this.CPU;

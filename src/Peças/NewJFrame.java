@@ -16,7 +16,15 @@ public class NewJFrame extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    JButton matrizbotao[][] = new JButton[5][5];
+    public JButton matrizbotao[][] = new JButton[5][5];
+    
+    public void atualizaIcone(){
+        for(int i=0;i<5;i++){
+            for(int j=0;j<5;j++){
+                matrizbotao[i][j].setIcon(Tabuleiro.matriz[i][j].getImagem());
+            }
+        }
+    }
     
     public NewJFrame() {
         initComponents();
@@ -46,6 +54,7 @@ public class NewJFrame extends javax.swing.JFrame {
         matrizbotao[4][2] = jButton23;
         matrizbotao[4][3] = jButton24;
         matrizbotao[4][4] = jButton25;
+        
     }
     
     /**
@@ -60,13 +69,14 @@ public class NewJFrame extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jButtonJogar = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        checkdebug = new javax.swing.JCheckBox();
+        optaleatorio = new javax.swing.JRadioButton();
+        optmanual = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jPanel4.setVisible(false);
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -92,13 +102,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel5.setVisible(false);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("COMBATE V. alpha.001");
         setMaximumSize(null);
         setMinimumSize(null);
-        setResizable(false);
         setSize(new java.awt.Dimension(1024, 900));
 
         jButtonJogar.setIcon(jButton1.getIcon());
@@ -109,18 +117,18 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setText("DEBUG");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        checkdebug.setText("DEBUG");
+        checkdebug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                checkdebugActionPerformed(evt);
             }
         });
 
-        buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setText("Posicionamento aleatório");
+        buttonGroup2.add(optaleatorio);
+        optaleatorio.setText("Posicionamento aleatório");
 
-        buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setText("Posicionamento manual");
+        buttonGroup2.add(optmanual);
+        optmanual.setText("Posicionamento manual");
 
         jLabel1.setText("Bem vindo ao jogo Combate! selecione a opção abaixo e clique em jogar:");
 
@@ -129,38 +137,35 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jCheckBox1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(310, 310, 310)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(582, 582, 582)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1))
-                        .addGap(18, 18, 18)
+                            .addComponent(optmanual)
+                            .addComponent(optaleatorio))
+                        .addGap(32, 32, 32)
                         .addComponent(jButtonJogar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(506, 506, 506)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(470, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(checkdebug)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(390, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jButtonJogar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 440, Short.MAX_VALUE)
-                .addComponent(jCheckBox1))
+                .addGap(18, 18, 18)
+                .addComponent(optmanual)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(optaleatorio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(checkdebug))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonJogar)
+                .addGap(371, 371, 371))
         );
 
         jPanel2.setVisible(false);
@@ -170,30 +175,28 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1099, Short.MAX_VALUE)
+            .addGap(0, 939, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 840, Short.MAX_VALUE)
+            .addGap(0, 783, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1099, Short.MAX_VALUE)
+            .addGap(0, 939, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 840, Short.MAX_VALUE)
+            .addGap(0, 783, Short.MAX_VALUE)
         );
 
         jPanel4.setPreferredSize(jPanel1.getMinimumSize());
-        jPanel4.setVisible(false);
         jPanel4.setLayout(new java.awt.GridLayout(5, 5, 1, 1));
 
         jButton1.setIcon(Tabuleiro.matriz[0][0].getImagem());
-        jButton1.setText("jButton1");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -204,64 +207,59 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel4.add(jButton1);
 
         jButton2.setIcon(Tabuleiro.matriz[0][1].getImagem());
-        jButton2.setText("jButton2");
         jPanel4.add(jButton2);
 
         jButton3.setIcon(Tabuleiro.matriz[0][2].getImagem());
-        jButton3.setText("jButton3");
         jPanel4.add(jButton3);
 
         jButton4.setIcon(Tabuleiro.matriz[0][3].getImagem());
-        jButton4.setText("jButton4");
         jPanel4.add(jButton4);
 
         jButton5.setIcon(Tabuleiro.matriz[0][4].getImagem());
-        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jButton5);
 
         jButton6.setIcon(Tabuleiro.matriz[1][0].getImagem());
-        jButton6.setText("jButton6");
         jPanel4.add(jButton6);
 
         jButton7.setIcon(Tabuleiro.matriz[1][1].getImagem());
         jButton7.setMnemonic('T');
-        jButton7.setText("jButton7");
         jPanel4.add(jButton7);
 
         jButton8.setIcon(Tabuleiro.matriz[1][2].getImagem());
-        jButton8.setText("jButton8");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jButton8);
 
         jButton9.setIcon(Tabuleiro.matriz[1][4].getImagem());
-        jButton9.setText("jButton9");
         jPanel4.add(jButton9);
 
         jButton10.setIcon(Tabuleiro.matriz[2][0].getImagem());
-        jButton10.setText("jButton10");
         jPanel4.add(jButton10);
 
         jButton11.setIcon(Tabuleiro.matriz[2][0].getImagem());
-        jButton11.setText("jButton11");
         jPanel4.add(jButton11);
 
         jButton12.setIcon(Tabuleiro.matriz[2][1].getImagem());
-        jButton12.setText("jButton12");
         jPanel4.add(jButton12);
 
         jButton13.setIcon(Tabuleiro.matriz[2][2].getImagem());
-        jButton13.setText("jButton13");
         jPanel4.add(jButton13);
 
         jButton14.setIcon(Tabuleiro.matriz[2][3].getImagem());
-        jButton14.setText("jButton14");
         jPanel4.add(jButton14);
 
         jButton15.setIcon(Tabuleiro.matriz[2][4].getImagem());
-        jButton15.setText("jButton15");
         jPanel4.add(jButton15);
 
         jButton16.setIcon(Tabuleiro.matriz[3][0].getImagem());
-        jButton16.setText("jButton16");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
@@ -270,19 +268,15 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel4.add(jButton16);
 
         jButton17.setIcon(Tabuleiro.matriz[3][1].getImagem());
-        jButton17.setText("jButton17");
         jPanel4.add(jButton17);
 
         jButton18.setIcon(Tabuleiro.matriz[3][2].getImagem());
-        jButton18.setText("jButton18");
         jPanel4.add(jButton18);
 
         jButton19.setIcon(Tabuleiro.matriz[3][3].getImagem());
-        jButton19.setText("jButton19");
         jPanel4.add(jButton19);
 
         jButton20.setIcon(Tabuleiro.matriz[3][4].getImagem());
-        jButton20.setText("jButton20");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton20ActionPerformed(evt);
@@ -291,7 +285,6 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel4.add(jButton20);
 
         jButton21.setIcon(Tabuleiro.matriz[4][0].getImagem());
-        jButton21.setText("jButton21");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton21ActionPerformed(evt);
@@ -300,61 +293,38 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel4.add(jButton21);
 
         jButton22.setIcon(Tabuleiro.matriz[4][1].getImagem());
-        jButton22.setText("jButton22");
         jPanel4.add(jButton22);
 
         jButton23.setIcon(Tabuleiro.matriz[4][2].getImagem());
-        jButton23.setText("jButton23");
         jPanel4.add(jButton23);
 
         jButton24.setIcon(Tabuleiro.matriz[4][3].getImagem());
-        jButton24.setText("jButton24");
         jPanel4.add(jButton24);
 
         jButton25.setIcon(Tabuleiro.matriz[4][4].getImagem());
-        jButton25.setText("jButton25");
         jPanel4.add(jButton25);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1099, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 840, Short.MAX_VALUE)
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1099, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 939, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -365,9 +335,39 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJogarActionPerformed
-        jPanel1.setVisible(false);
         
-        jPanel4.setVisible(true);
+        
+        Tabuleiro.esvaziaTabuleiro();
+        
+        if(optaleatorio.isSelected()){
+            
+                Tabuleiro.instanciaPeçasCPU();
+                Tabuleiro.instanciaPeçasJogador();
+                Tabuleiro.posicionamentoAleatorio();
+                Tabuleiro.posicionamentoCPU();
+            if(checkdebug.isSelected()){
+                
+            }
+                jPanel1.setVisible(false);
+                jPanel4.setVisible(true);
+                
+            
+            
+        }
+        if(optmanual.isSelected()){
+            if(checkdebug.isSelected()){
+                
+            }
+                Tabuleiro.instanciaPeçasCPU();
+                Tabuleiro.instanciaPeçasJogador();
+                Tabuleiro.posicionamentoCPU();
+                jPanel1.setVisible(false);
+                jPanel4.setVisible(true);
+                
+            
+            
+        }
+        atualizaIcone();
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonJogarActionPerformed
@@ -387,9 +387,17 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton20ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void checkdebugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkdebugActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_checkdebugActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -421,13 +429,7 @@ public class NewJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
                 Tabuleiro.esvaziaTabuleiro();
-                Tabuleiro.instanciaPeçasCPU();
-                Tabuleiro.instanciaPeçasJogador();
-                Tabuleiro.posicionamentoAleatorio();
-                Tabuleiro.posicionamentoCPU();
-                
                 new NewJFrame().setVisible(true);
                 
             }
@@ -436,6 +438,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox checkdebug;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -462,14 +465,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonJogar;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton optaleatorio;
+    private javax.swing.JRadioButton optmanual;
     // End of variables declaration//GEN-END:variables
 }

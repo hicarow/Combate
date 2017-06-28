@@ -86,7 +86,7 @@ public final class Tabuleiro {
             do {
                 l = Random.nextInt(2);
                 c = Random.nextInt(5);
-            }   while (matriz[l][c].getNivel() != 0);
+            } while (matriz[l][c].getNivel() != 0);
 
             matriz[l][c] = CPU[i];
             matriz[l][c].setTime(2);
@@ -134,128 +134,134 @@ public final class Tabuleiro {
             }
         }
     }
-    public static boolean MovimentoAI(){
+
+    public static boolean MovimentoAI() {
         Random Random = new Random();
         boolean validate;
         int destino;
-        
-        do{
+
+        do {
             validate = false;
-            
+
             x = Random.nextInt(5);
             y = Random.nextInt(5);
-            
-            if(ValidaOrigem(x, y, 2))
+
+            if (validaOrigem(x, y, 2)) {
                 validate = true;
-            
-            if(Tabuleiro.matriz[x][y].time != 2)
+            }
+
+            if (Tabuleiro.matriz[x][y].time != 2) {
                 validate = false;
-                               
-        }while(!validate);
-                        
-        do{
+            }
+
+        } while (!validate);
+
+        do {
             validate = false;
-            
+
             destino = Random.nextInt(4);
-            
+
             System.out.println(destino);
-            
-            if(destino == 0) //cima
+
+            if (destino == 0) //cima
             {
-                if(x - 1 > -1){
-                    if(Tabuleiro.matriz[x-1][y].time != 2){
-                        x2 = x-1;
+                if (x - 1 > -1) {
+                    if (Tabuleiro.matriz[x - 1][y].time != 2) {
+                        x2 = x - 1;
                         y2 = y;
-                        validate = true;                        
+                        validate = true;
                     }
                 }
-            }
-            else if(destino == 1) //direita
+            } else if (destino == 1) //direita
             {
-                if(y + 1 < 5){
-                    if(Tabuleiro.matriz[x][y+1].time != 2){
+                if (y + 1 < 5) {
+                    if (Tabuleiro.matriz[x][y + 1].time != 2) {
                         x2 = x;
-                        y2 = y+1;
+                        y2 = y + 1;
                         validate = true;
                     }
                 }
-            }
-            else if(destino == 2) //baixo
+            } else if (destino == 2) //baixo
             {
-                if(x + 1 < 5){
-                    if(Tabuleiro.matriz[x+1][y].time != 2){
-                        x2 = x+1;
+                if (x + 1 < 5) {
+                    if (Tabuleiro.matriz[x + 1][y].time != 2) {
+                        x2 = x + 1;
                         y2 = y;
                         validate = true;
                     }
                 }
-            }
-            else if(destino == 3) //esquerda
+            } else if (destino == 3) //esquerda
             {
-                if(y-1 > -1){
-                    if(Tabuleiro.matriz[x][y-1].time != 2){
+                if (y - 1 > -1) {
+                    if (Tabuleiro.matriz[x][y - 1].time != 2) {
                         x2 = x;
                         y2 = y - 1;
                         validate = true;
                     }
                 }
             }
-            if(Tabuleiro.matriz[x2][y2].time == 3)
+            if (Tabuleiro.matriz[x2][y2].time == 3) {
                 validate = false;
-        }while(!validate);
-        
+            }
+        } while (!validate);
+
         System.out.println(x + " : " + y);
         System.out.println(x2 + " : " + y2);
         System.out.println(Tabuleiro.matriz[x][y].nome);
-        
-        return(Tabuleiro.matriz[x][y].Batalha(x, x2, y, y2));
+
+        return (Tabuleiro.matriz[x][y].Batalha(x, x2, y, y2));
     }
-    
-    public static int FimdeJogo(int n){
+
+    public static boolean validaOrigem(int x, int y, int k) {
+
+        if (Tabuleiro.matriz[x][y].nivel > 10) {
+            return false;
+        } else {
+            if (x + 1 < 5) {
+                if ((Tabuleiro.matriz[x + 1][y].time != k) && (Tabuleiro.matriz[x + 1][y].time != 3)) {
+                    return true;
+                }
+            }
+            if (x - 1 > -1) {
+                if ((Tabuleiro.matriz[x - 1][y].time != k) && (Tabuleiro.matriz[x - 1][y].time != 3)) {
+                    return true;
+                }
+            }
+            if (y + 1 < 5) {
+                if ((Tabuleiro.matriz[x][y + 1].time != k) && (Tabuleiro.matriz[x][y + 1].time != 3)) {
+                    return true;
+                }
+            }
+            if (y - 1 > -1) {
+                if ((Tabuleiro.matriz[x][y - 1].time != k) && (Tabuleiro.matriz[x][y - 1].time != 3)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static int fimdeJogo(int n) {
         int i, j, cont;
-        
+
         cont = 0;
-        
-        for(i = 0; i < 5; i++){
-            for(j = 0; j < 5; j++){
-                if(Tabuleiro.matriz[i][j].time == n){
-                    if(Tabuleiro.matriz[i][j].nivel <= 10){
-                        if(ValidaOrigem(i, j, n))
+
+        for (i = 0; i < 5; i++) {
+            for (j = 0; j < 5; j++) {
+                if (Tabuleiro.matriz[i][j].time == n) {
+                    if (Tabuleiro.matriz[i][j].nivel <= 10) {
+                        if (validaOrigem(i, j, n)) {
                             cont++;
+                        }
                     }
                 }
             }
         }
-        
-        if(cont == 0){
+
+        if (cont == 0) {
             return 1;
-        }
-        else
+        } else {
             return 0;
-    }
-    public static boolean ValidaOrigem(int x, int y, int k){
-        
-        
-        if(Tabuleiro.matriz[x][y].nivel > 10)
-            return false;
-        else{
-            if(x+1 < 5){
-                if((Tabuleiro.matriz[x+1][y].time != k) && (Tabuleiro.matriz[x+1][y].time != 3))
-                return true;
-            }
-            if(x-1 > -1){
-                if((Tabuleiro.matriz[x-1][y].time != k) && (Tabuleiro.matriz[x-1][y].time != 3))
-                return true;
-            }
-            if(y+1 < 5){
-                if((Tabuleiro.matriz[x][y+1].time != k) && (Tabuleiro.matriz[x][y+1].time != 3))
-                return true;
-            }
-            if(y-1 > -1){
-                if((Tabuleiro.matriz[x][y-1].time != k) && (Tabuleiro.matriz[x][y-1].time != 3))
-                return true;
-            }
         }
-        return false;
     }
 }

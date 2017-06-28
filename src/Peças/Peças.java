@@ -50,7 +50,7 @@ public abstract class Peças {
     }
 
     public boolean mover(int x, int x2, int y, int y2) {
-        if (validaMovimento(x, x2, y, y2)) {
+        if (validaMover(x, x2, y, y2)) {
             if (x == x2) {
                 if (Math.pow(y - y2, 2) != 1) {
                     return false;
@@ -71,7 +71,7 @@ public abstract class Peças {
         }
     }
 
-    protected boolean validaMovimento(int x1, int y1, int x2, int y2) {
+    protected boolean validaMover(int x1, int y1, int x2, int y2) {
         if (Tabuleiro.matriz[x2][y2].time == 3) {
             return false;
         } else if (this.time == Tabuleiro.matriz[x2][y2].time) {

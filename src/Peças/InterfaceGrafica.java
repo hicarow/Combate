@@ -89,7 +89,7 @@ public class InterfaceGrafica extends JFrame implements ActionListener{
                 for(j = 0; j < 5; j++){
                     if(evento.getSource() == matrizbotao[i][j]){
                         if(Tabuleiro.matriz[i][j].time == 1){
-                            if(Tabuleiro.ValidaOrigem(i, j, 1)){
+                            if(Tabuleiro.validaOrigem(i, j, 1)){
                                 x = i;
                                 y = j;
                                 turnp = false;
@@ -121,7 +121,7 @@ public class InterfaceGrafica extends JFrame implements ActionListener{
                 vencedor = 1;
                 turnai = false;
             }
-            else if(Tabuleiro.FimdeJogo(2) == 1){
+            else if(Tabuleiro.fimdeJogo(2) == 1){
                 fim =  true;
                 vencedor = 1;
                 turnai = false;
@@ -137,7 +137,7 @@ public class InterfaceGrafica extends JFrame implements ActionListener{
                 }
             }
 
-            if(Tabuleiro.FimdeJogo(1) == 1){
+            if(Tabuleiro.fimdeJogo(1) == 1){
                 fim = true;
                 vencedor = 2;
             }

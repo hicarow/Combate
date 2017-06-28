@@ -11,11 +11,11 @@ public class Bomba extends Peças {
         this.nivel = 99;
     }
 
-    public void setImagem(boolean visivel, boolean CPU) {
+    public void setImagem() {
 
-        if (visivel == true && CPU == false) {
+        if (this.visivel == true && this.CPU == false) {
             this.imagem = new ImageIcon("BombaJogador.png");
-        } else if (visivel == true && CPU == true) {
+        } else if (this.visivel == true && this.CPU == true) {
             this.imagem = new ImageIcon("BombaCPU.png");
         } else {
             this.imagem = new ImageIcon("Desconhecido.png");

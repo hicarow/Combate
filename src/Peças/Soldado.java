@@ -11,10 +11,10 @@ public class Soldado extends Peças{
         this.nivel=2;
         
     }
-    public void setImagem(boolean visivel, boolean CPU){
-            if(visivel==true&&CPU==false)
+    public void setImagem(){
+            if(this.visivel==true&&this.CPU==false)
                 this.imagem = new ImageIcon("SoldadoJogador.png");
-            else if(visivel==true&&CPU==true){
+            else if(this.visivel==true&&this.CPU==true){
                 this.imagem = new ImageIcon("SoldadoCPU.png");
              }
             else

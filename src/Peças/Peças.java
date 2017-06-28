@@ -45,8 +45,8 @@ public abstract class Peças {
     public ImageIcon getImagem() {
         return this.imagem;
     }
-    public void setImagem(boolean visivel, boolean CPU){
-        
+    public void setImagem(){
+
     }
 
     public boolean mover(int x, int x2, int y, int y2) {

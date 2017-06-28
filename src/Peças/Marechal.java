@@ -11,14 +11,14 @@ public class Marechal extends Peças{
         this.movel=true;
         this.nivel=10;
     }
-    public void setImagem(boolean visivel, boolean CPU){
+    public void setImagem(){
 
-        if (visivel == true && CPU == false) {
+        if (this.visivel == true && this.CPU == false) {
             this.imagem = new ImageIcon("MarechalJogador.png");
-        } else if (visivel == true && CPU == true) {
+        } else if (this.visivel == true && this.CPU == true) {
             this.imagem = new ImageIcon("MarechalCPU.png");
         } else {
-            this.imagem2 = new ImageIcon("Desconhecido.png");
+            this.imagem = new ImageIcon("Desconhecido.png");
         }
     }
 

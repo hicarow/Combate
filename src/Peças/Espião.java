@@ -11,9 +11,9 @@ public class Espião extends Peças {
         this.movel = true;
     }
 
-    public void setImagem(boolean visivel, boolean CPU) {
+    public void setImagem() {
 
-    if(visivel==true&&CPU==false)
+    if(this.visivel==true&&this.CPU==false)
         this.imagem = new ImageIcon("EspiaoJogador.png");
     else if(visivel==true&&CPU==true)
         this.imagem = new ImageIcon("EspiaoCPU.png");

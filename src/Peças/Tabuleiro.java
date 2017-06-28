@@ -33,7 +33,7 @@ public final class Tabuleiro {
             Jogador[i].setTime(1);
         }
         for (int i = 0; i < 10; i++) {
-            Jogador[i].setImagem(true, false);
+            Jogador[i].setImagem();
         }
 
     }
@@ -61,7 +61,7 @@ public final class Tabuleiro {
             CPU[i].setTime(2);
         }
         for (int i = 0; i < 10; i++) {
-            CPU[i].setImagem(false, true);
+            CPU[i].setImagem();
         }
 
     }
@@ -91,6 +91,7 @@ public final class Tabuleiro {
             matriz[l][c] = CPU[i];
             matriz[l][c].setTime(2);
         }
+        posicionaLago();
     }
 
     public void posicionamentoDefinido() {
@@ -130,7 +131,8 @@ public final class Tabuleiro {
             for (j = 0; j < 5; j++) {
                 if (matriz[i][j].getTime() == 2) {
                     matriz[i][j].setVisivel(true);
-                }
+                    matriz[i][j].setImagem();
+                    NewJFrame.matrizbotao[i][j].setToolTipText(Tabuleiro.matriz[i][j].nome);}
             }
         }
     }

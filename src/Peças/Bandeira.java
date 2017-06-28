@@ -11,15 +11,17 @@ public class Bandeira extends Peças {
         this.nivel = 100;
     }
 
-    public void setImagem(boolean visivel, boolean CPU) {
+    public void setImagem() {
 
-        if (visivel == true && CPU == false) {
+        if (this.visivel == true && this.CPU == false) {
             this.imagem = new ImageIcon("BandeiraJogador.png");
-        } else if (visivel == true && CPU == true) {
+        } else if (this.visivel == true && this.CPU == true) {
             this.imagem = new ImageIcon("BandeiraCPU.png");
         } else {
             this.imagem = new ImageIcon("Desconhecido.png");
         }
+    
+        
     }
 
 }

@@ -20,5 +20,11 @@ public class Vazio extends Peças {
         this.movel = true;
         this.nivel = 0;
         this.imagem = new ImageIcon("Vazio.png");
+
+    }
+
+    public void setImagem() {
+
+        this.imagem = new ImageIcon("Vazio.png");
     }
 }

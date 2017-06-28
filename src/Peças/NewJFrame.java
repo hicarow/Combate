@@ -16,19 +16,19 @@ public class NewJFrame extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public JButton matrizbotao[][] = new JButton[5][5];
-    
-    public void atualizaIcone(){
-        for(int i=0;i<5;i++){
-            for(int j=0;j<5;j++){
+    public static JButton matrizbotao[][] = new JButton[5][5];
+
+    public void atualizaIcone() {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
                 matrizbotao[i][j].setIcon(Tabuleiro.matriz[i][j].getImagem());
             }
         }
     }
-    
+
     public NewJFrame() {
         initComponents();
-        
+
         matrizbotao[0][0] = jButton1;
         matrizbotao[0][1] = jButton2;
         matrizbotao[0][2] = jButton3;
@@ -54,9 +54,9 @@ public class NewJFrame extends javax.swing.JFrame {
         matrizbotao[4][2] = jButton23;
         matrizbotao[4][3] = jButton24;
         matrizbotao[4][4] = jButton25;
-        
+
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -118,6 +118,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         checkdebug.setText("DEBUG");
+        checkdebug.setToolTipText("Altera a visibilidade de todas as peças do CPU");
         checkdebug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkdebugActionPerformed(evt);
@@ -126,9 +127,11 @@ public class NewJFrame extends javax.swing.JFrame {
 
         buttonGroup2.add(optaleatorio);
         optaleatorio.setText("Posicionamento aleatório");
+        optaleatorio.setToolTipText("Suas peças e as do CPU são posicionadas aleatoriamente.");
 
         buttonGroup2.add(optmanual);
         optmanual.setText("Posicionamento manual");
+        optmanual.setToolTipText("Não implementado.");
 
         jLabel1.setText("Bem vindo ao jogo Combate! selecione a opção abaixo e clique em jogar:");
 
@@ -137,35 +140,39 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(310, 310, 310)
+                .addComponent(checkdebug)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(257, 257, 257)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(optmanual)
                             .addComponent(optaleatorio))
-                        .addGap(32, 32, 32)
-                        .addComponent(jButtonJogar))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(checkdebug)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(158, 158, 158)
+                        .addComponent(jButtonJogar)))
+                .addContainerGap(322, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(352, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(optmanual)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(optaleatorio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(optmanual)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(optaleatorio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                        .addComponent(jButtonJogar)
+                        .addGap(350, 350, 350)))
                 .addComponent(checkdebug))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonJogar)
-                .addGap(371, 371, 371))
         );
 
         jPanel2.setVisible(false);
@@ -335,40 +342,34 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJogarActionPerformed
-        
-        
+
         Tabuleiro.esvaziaTabuleiro();
-        
-        if(optaleatorio.isSelected()){
-            
-                Tabuleiro.instanciaPeçasCPU();
-                Tabuleiro.instanciaPeçasJogador();
-                Tabuleiro.posicionamentoAleatorio();
-                Tabuleiro.posicionamentoCPU();
-            if(checkdebug.isSelected()){
-                
+
+        if (optaleatorio.isSelected()) {
+
+            Tabuleiro.instanciaPeçasCPU();
+            Tabuleiro.instanciaPeçasJogador();
+            Tabuleiro.posicionamentoAleatorio();
+            Tabuleiro.posicionamentoCPU();
+            if (checkdebug.isSelected()) {
+                Tabuleiro.debug();
             }
-                jPanel1.setVisible(false);
-                jPanel4.setVisible(true);
-                
-            
-            
+            jPanel1.setVisible(false);
+            jPanel4.setVisible(true);
         }
-        if(optmanual.isSelected()){
-            if(checkdebug.isSelected()){
-                
+        else if (optmanual.isSelected()) {
+
+            Tabuleiro.instanciaPeçasCPU();
+            Tabuleiro.instanciaPeçasJogador();
+            Tabuleiro.posicionamentoCPU();
+            if (checkdebug.isSelected()) {
+                Tabuleiro.debug();
             }
-                Tabuleiro.instanciaPeçasCPU();
-                Tabuleiro.instanciaPeçasJogador();
-                Tabuleiro.posicionamentoCPU();
-                jPanel1.setVisible(false);
-                jPanel4.setVisible(true);
-                
-            
-            
+            jPanel1.setVisible(false);
+            jPanel4.setVisible(true);
         }
         atualizaIcone();
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonJogarActionPerformed
 
@@ -382,8 +383,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton20ActionPerformed
 
@@ -431,7 +431,7 @@ public class NewJFrame extends javax.swing.JFrame {
             public void run() {
                 Tabuleiro.esvaziaTabuleiro();
                 new NewJFrame().setVisible(true);
-                
+
             }
         });
     }
